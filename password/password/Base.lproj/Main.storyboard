@@ -66,7 +66,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="aqui"/>
                                 <connections>
-                                    <segue destination="VQj-Zn-Ykt" kind="show" id="lXE-Ce-f34"/>
+                                    <segue destination="VQj-Zn-Ykt" kind="show" id="Ewa-kd-4X9"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="837-xg-XjA">
@@ -104,10 +104,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
-        <!--View Controller-->
+        <!--Second View-->
         <scene sceneID="JQI-NU-RAx">
             <objects>
-                <viewController id="VQj-Zn-Ykt" sceneMemberID="viewController">
+                <viewController id="VQj-Zn-Ykt" customClass="secondView" customModule="password" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tgn-zk-TyU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,18 +127,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCj-j3-yBl">
-                                <rect key="frame" x="142" y="583" width="90" height="30"/>
+                                <rect key="frame" x="142" y="448" width="90" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Iniciar cesiòn"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="hvy-UK-RIe"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sqL-g5-lYL">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CajaU" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sqL-g5-lYL">
                                 <rect key="frame" x="42" y="257" width="291" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q68-1x-hmo">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CajaN" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q68-1x-hmo">
                                 <rect key="frame" x="42" y="180" width="290" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -166,8 +169,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcv-xa-r2m">
-                                <rect key="frame" x="42" y="336" width="291" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyr-AL-W3e">
+                                <rect key="frame" x="148" y="395" width="78" height="63"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Registrarse"/>
+                                <connections>
+                                    <action selector="registrar:" destination="VQj-Zn-Ykt" eventType="touchUpInside" id="5d2-Ev-HYF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="CajaC" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gcv-xa-r2m">
+                                <rect key="frame" x="41" y="336" width="291" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -177,6 +188,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="z2r-4I-pl9"/>
                     </view>
+                    <connections>
+                        <outlet property="cajaC" destination="gcv-xa-r2m" id="fv6-ai-xaa"/>
+                        <outlet property="cajaN" destination="q68-1x-hmo" id="gcL-z4-yAY"/>
+                        <outlet property="cajaU" destination="sqL-g5-lYL" id="y62-h5-Ii9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vy9-0z-2xe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

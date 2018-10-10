@@ -11,6 +11,7 @@ import UIKit
 struct Usuarios{
     var nombre: String
     var usuario: String
-    var contraseña: String 
+    var contraseña: String
 }
 
+var users: [Usuarios] = []

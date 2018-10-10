@@ -9,13 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var users: [Usuarios] = []
+    //var users: [Usuarios] = []
     
     @IBOutlet weak var user: UITextField!
 
     @IBOutlet weak var password: UITextField!
     
     var usuario: String = ""
+    var contraseña: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class ViewController: UIViewController {
         
          if let dato = defautls.object(forKey: "Usser") as? String{
          user.text = dato
-            usuario = String("\(defautls)")
+            usuario = dato
          }
          else{
          user.text = "No hay nada"
@@ -33,21 +34,24 @@ class ViewController: UIViewController {
          
          if let dato = defautls1.object(forKey: "Password") as? String{
          password.text = dato
+           contraseña = dato //String("\(defautls1)")
          }
          else{
          password.text = "No hay nada"
-         }
+            
+        }
         
     }
 
     @IBAction func ingresar(_ sender: UIButton) {
         for i in users{
-           if i.usuario == usuario {
-                print("ir a sig vista")
+            if i.usuario == usuario{
+                print("Oye si estas compa!!!")
+                if i.contraseña == contraseña{
+                    print("Y además tu contraseña es correcta")
                 }
             }
-    
-
-    }s
-
+        }
+        print("pos no estas compa")
+    }
 }
